@@ -1,14 +1,20 @@
-# Reproducible Research: Assessment 1
+---
+title: 'Reproducible Research: Assessment 1'
+output:
+  html_document:
+    keep_md: yes
+---
 
-## Loading and Preprocessing data
+## Loading and preprocessing the data
 
-1. Load data:
+1. Load the data:
 
 ```r
 data <- read.csv("activity.csv", header=TRUE)
 ```
 
-2. Show original data:
+2. Show the original data:
+
 ```r
 head(data)
 ```
@@ -52,7 +58,7 @@ hist(stepsByDay$steps, col = "blue"
      , xlab = "Steps", main = "Total Number of Steps Per Day")
 ```
 
-![plot of chunk histogram1](./PA1_template_files/plots_markdown/plot1.png) 
+![](PA1_template_files/figure-html/plot4-1.png)<!-- -->
 
 3. Calculate and report the mean and median total number of steps taken per day
 
@@ -62,7 +68,7 @@ mean1
 ```
 
 ```
-## [1] 10766
+## [1] 10766.19
 ```
 
 ```r
@@ -82,13 +88,13 @@ head(averageSteps)
 ```
 
 ```
-##   interval   steps
-## 1        0 1.71698
-## 2        5 0.33962
-## 3       10 0.13208
-## 4       15 0.15094
-## 5       20 0.07547
-## 6       25 2.09434
+##   interval     steps
+## 1        0 1.7169811
+## 2        5 0.3396226
+## 3       10 0.1320755
+## 4       15 0.1509434
+## 5       20 0.0754717
+## 6       25 2.0943396
 ```
 
 2. Make a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
@@ -99,7 +105,7 @@ with(averageSteps, plot(interval, steps
                 , col = "blue")) 
 ```
 
-![plot of chunk plot1](./PA1_template_files/plots_markdown/plot2.png) 
+![](PA1_template_files/figure-html/plot1-1.png)<!-- -->
 
 3. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -111,7 +117,7 @@ max
 ```
 
 ```
-## [1] 206.2
+## [1] 206.1698
 ```
 
 The interval contains max data is:
@@ -128,7 +134,7 @@ subsetData$interval
 ## Imputing missing values
 Note that there are a number of days/intervals where there are missing values (coded as NA). The presence of missing days may introduce bias into some calculations or summaries of the data.
 
-1. Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NAs)
+1. Calculate&Report total number of missing values in the dataset (i.e. the total number of rows with NAs)
 
 ```r
 colSums(is.na(data))
@@ -147,24 +153,24 @@ head(data)
 ```
 
 ```
-##   steps       date interval newSteps
-## 1    NA 2012-10-01        0  1.71698
-## 2    NA 2012-10-01        5  0.33962
-## 3    NA 2012-10-01       10  0.13208
-## 4    NA 2012-10-01       15  0.15094
-## 5    NA 2012-10-01       20  0.07547
-## 6    NA 2012-10-01       25  2.09434
+##   steps       date interval  newSteps
+## 1    NA 2012-10-01        0 1.7169811
+## 2    NA 2012-10-01        5 0.3396226
+## 3    NA 2012-10-01       10 0.1320755
+## 4    NA 2012-10-01       15 0.1509434
+## 5    NA 2012-10-01       20 0.0754717
+## 6    NA 2012-10-01       25 2.0943396
 ```
 
-3. Fill in the missing data
+3. Fill in missing data
 
 ```r
 data$steps[is.na(data$steps)] <- data$newSteps
 ```
 
 ```
-## Warning: number of items to replace is not a multiple of replacement
-## length
+## Warning in data$steps[is.na(data$steps)] <- data$newSteps: número de items
+## para para sustituir no es un múltiplo de la longitud del reemplazo
 ```
 
 ```r
@@ -172,13 +178,13 @@ head(data)
 ```
 
 ```
-##     steps       date interval newSteps
-## 1 1.71698 2012-10-01        0  1.71698
-## 2 0.33962 2012-10-01        5  0.33962
-## 3 0.13208 2012-10-01       10  0.13208
-## 4 0.15094 2012-10-01       15  0.15094
-## 5 0.07547 2012-10-01       20  0.07547
-## 6 2.09434 2012-10-01       25  2.09434
+##       steps       date interval  newSteps
+## 1 1.7169811 2012-10-01        0 1.7169811
+## 2 0.3396226 2012-10-01        5 0.3396226
+## 3 0.1320755 2012-10-01       10 0.1320755
+## 4 0.1509434 2012-10-01       15 0.1509434
+## 5 0.0754717 2012-10-01       20 0.0754717
+## 6 2.0943396 2012-10-01       25 2.0943396
 ```
 
 4. Create a new dataset that is equal to the original dataset but with the missing data filled in
@@ -190,13 +196,13 @@ head(newdata)
 ```
 
 ```
-##     steps       date interval
-## 1 1.71698 2012-10-01        0
-## 2 0.33962 2012-10-01        5
-## 3 0.13208 2012-10-01       10
-## 4 0.15094 2012-10-01       15
-## 5 0.07547 2012-10-01       20
-## 6 2.09434 2012-10-01       25
+##       steps       date interval
+## 1 1.7169811 2012-10-01        0
+## 2 0.3396226 2012-10-01        5
+## 3 0.1320755 2012-10-01       10
+## 4 0.1509434 2012-10-01       15
+## 5 0.0754717 2012-10-01       20
+## 6 2.0943396 2012-10-01       25
 ```
 
 5. Subset in the new data set to calculate the total number of steps per day
@@ -207,13 +213,13 @@ head(sumdata)
 ```
 
 ```
-##         date steps
-## 1 2012-10-01 10766
-## 2 2012-10-02   126
-## 3 2012-10-03 11352
-## 4 2012-10-04 12116
-## 5 2012-10-05 13294
-## 6 2012-10-06 15420
+##         date    steps
+## 1 2012-10-01 10766.19
+## 2 2012-10-02   126.00
+## 3 2012-10-03 11352.00
+## 4 2012-10-04 12116.00
+## 5 2012-10-05 13294.00
+## 6 2012-10-06 15420.00
 ```
 
 6. Make a histogram of the total number of steps taken each day
@@ -224,7 +230,7 @@ hist(sumdata$steps, col = "green"
      , main = "Total Number of Steps Per Day (with the missing data filled in)")
 ```
 
-![plot of chunk histogram2](./PA1_template_files/plots_markdown/plot3.png) 
+![](PA1_template_files/figure-html/plot2-1.png)<!-- -->
 
 7. Calculate and report the mean and median total number of steps taken per day
 
@@ -234,7 +240,7 @@ mean2
 ```
 
 ```
-## [1] 10766
+## [1] 10766.19
 ```
 
 ```r
@@ -243,7 +249,7 @@ median2
 ```
 
 ```
-## [1] 10766
+## [1] 10766.19
 ```
 
 8. Calculate the differences of the mean and median between the first and second part
@@ -261,7 +267,7 @@ median2 - median1
 ```
 
 ```
-## [1] 1.189
+## [1] 1.188679
 ```
 ## Are there differences in activity patterns between weekdays and weekends?
 For this part, I do not use the weekdays() function, instead I use the isWeekday() function from the timeDate package.
@@ -276,10 +282,6 @@ install.packages("timeDate")
 library(timeDate)
 ```
 
-```
-## Warning: package 'timeDate' was built under R version 3.1.1
-```
-
 2. Create a new column, and use the isWeekday() function to check if the date is weekday or weekend
 
 ```r
@@ -288,13 +290,13 @@ head(newdata)
 ```
 
 ```
-##     steps       date interval Weekday
-## 1 1.71698 2012-10-01        0    TRUE
-## 2 0.33962 2012-10-01        5    TRUE
-## 3 0.13208 2012-10-01       10    TRUE
-## 4 0.15094 2012-10-01       15    TRUE
-## 5 0.07547 2012-10-01       20    TRUE
-## 6 2.09434 2012-10-01       25    TRUE
+##       steps       date interval Weekday
+## 1 1.7169811 2012-10-01        0    TRUE
+## 2 0.3396226 2012-10-01        5    TRUE
+## 3 0.1320755 2012-10-01       10    TRUE
+## 4 0.1509434 2012-10-01       15    TRUE
+## 5 0.0754717 2012-10-01       20    TRUE
+## 6 2.0943396 2012-10-01       25    TRUE
 ```
 
 3. Subset and calculate the average steps for weekday and weekend
@@ -308,13 +310,13 @@ head(weekdayMean)
 ```
 
 ```
-##   interval   steps
-## 1        0 2.25115
-## 2        5 0.44528
-## 3       10 0.17317
-## 4       15 0.19790
-## 5       20 0.09895
-## 6       25 1.59036
+##   interval      steps
+## 1        0 2.25115304
+## 2        5 0.44528302
+## 3       10 0.17316562
+## 4       15 0.19790356
+## 5       20 0.09895178
+## 6       25 1.59035639
 ```
 
 Weekend
@@ -326,13 +328,13 @@ head(weekendMean)
 ```
 
 ```
-##   interval    steps
-## 1        0 0.214623
-## 2        5 0.042453
-## 3       10 0.016509
-## 4       15 0.018868
-## 5       20 0.009434
-## 6       25 3.511792
+##   interval       steps
+## 1        0 0.214622642
+## 2        5 0.042452830
+## 3       10 0.016509434
+## 4       15 0.018867925
+## 5       20 0.009433962
+## 6       25 3.511792453
 ```
 
 4. Make the panel plot to calculate the average number of steps taken for weekday and weekend
@@ -348,4 +350,4 @@ plot(weekendMean$interval, weekendMean$steps
      , main ="Weekend", col ="yellow", type="l")
 ```
 
-![plot of chunk panel](./PA1_template_files/plots_markdown/plot4.png) 
+![](PA1_template_files/figure-html/plot3-1.png)<!-- -->
