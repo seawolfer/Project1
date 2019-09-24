@@ -26,7 +26,7 @@ head(averageSteps)
 #2. Make a time series plot
 with(averageSteps, plot(interval, steps
                 , type="l", main="Average number of steps taken in 5-min interval"
-                , col = "red")) 
+                , col = "blue")) 
 
 #Max data is:
 max <- max(averageSteps$steps)
@@ -94,11 +94,11 @@ head(weekendMean)
 layout(matrix(c(1,1,2,2), 2, 2, byrow = TRUE))
 plot(weekdayMean$interval, weekdayMean$steps
      , xlab = "interval", ylab = "Number of steps"
-     , main ="Weekday", col ="green", type="l") 
+     , main ="Weekday", col ="blue", type="l") 
 
 plot(weekendMean$interval, weekendMean$steps
      , xlab = "interval", ylab = "Number of steps"
-     , main ="Weekend", col ="blue", type="l")
+     , main ="Weekend", col ="yellow", type="l")
 
 #library(knitr)
 #library(markdown)

@@ -29,7 +29,7 @@ head(stepsByDay)
 ```
 
 2. Make a histogram of the total number of steps taken each day
-```{r histogram1, echo=TRUE}
+```{r plot4, echo=TRUE}
 hist(stepsByDay$steps, col = "blue"
      , xlab = "Steps", main = "Total Number of Steps Per Day")
 ```
@@ -103,7 +103,7 @@ head(sumdata)
 ```
 
 6. Make a histogram of the total number of steps taken each day
-```{r histogram2, echo=TRUE}
+```{r plot2, echo=TRUE}
 hist(sumdata$steps, col = "green"
      , xlab = "Steps"
      , main = "Total Number of Steps Per Day (with the missing data filled in)")
@@ -157,7 +157,7 @@ head(weekendMean)
 ```
 
 4. Make the panel plot to calculate the average number of steps taken for weekday and weekend
-```{r panel, echo=TRUE}
+```{r plot3, echo=TRUE}
 layout(matrix(c(1,1,2,2), 2, 2, byrow = TRUE))
 plot(weekdayMean$interval, weekdayMean$steps
      , xlab = "interval", ylab = "Number of steps"
@@ -165,5 +165,5 @@ plot(weekdayMean$interval, weekdayMean$steps
 
 plot(weekendMean$interval, weekendMean$steps
      , xlab = "interval", ylab = "Number of steps"
-     , main ="Weekend", col ="red", type="l")
+     , main ="Weekend", col ="yellow", type="l")
 ```

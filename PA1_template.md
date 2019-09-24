@@ -7,7 +7,7 @@
 ```r
 data <- read.csv("activity.csv", header=TRUE)
 ```
-
+hist
 2. Show original data:
 
 ```r
@@ -49,11 +49,11 @@ head(stepsByDay)
 2. Make a histogram of the total number of steps taken each day
 
 ```r
-hist(stepsByDay$steps, col = "chocolate"
+hist(stepsByDay$steps, col = "blue"
      , xlab = "Steps", main = "Total Number of Steps Per Day")
 ```
 
-![plot of chunk histogram1](./PA1_template_files/figure_markdown/histogram1.png) 
+![plot of chunk histogram1](./PA1_template_files/figure_markdown/plot1.png) 
 
 3. Calculate and report the mean and median total number of steps taken per day
 
@@ -100,7 +100,7 @@ with(averageSteps, plot(interval, steps
                 , col = "blue")) 
 ```
 
-![plot of chunk plot1](./PA1_template_files/figure_markdown/plot1.png) 
+![plot of chunk plot1](./PA1_template_files/figure_markdown/plot2.png) 
 
 3. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -220,12 +220,12 @@ head(sumdata)
 6. Make a histogram of the total number of steps taken each day
 
 ```r
-hist(sumdata$steps, col = "blue"
+hist(sumdata$steps, col = "green"
      , xlab = "Steps"
      , main = "Total Number of Steps Per Day (with the missing data filled in)")
 ```
 
-![plot of chunk histogram2](./PA1_template_files/figure_markdown/histogram2.png) 
+![plot of chunk histogram2](./PA1_template_files/figure_markdown/plot3.png) 
 
 7. Calculate and report the mean and median total number of steps taken per day
 
@@ -346,7 +346,7 @@ plot(weekdayMean$interval, weekdayMean$steps
 
 plot(weekendMean$interval, weekendMean$steps
      , xlab = "interval", ylab = "Number of steps"
-     , main ="Weekend", col ="red", type="l")
+     , main ="Weekend", col ="yellow", type="l")
 ```
 
-![plot of chunk panel](./PA1_template_files/figure_markdown/panel.png) 
+![plot of chunk panel](./PA1_template_files/figure_markdown/plot4.png) 
