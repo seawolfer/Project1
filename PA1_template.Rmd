@@ -30,7 +30,7 @@ head(stepsByDay)
 
 2. Make a histogram of the total number of steps taken each day
 ```{r histogram1, echo=TRUE}
-hist(stepsByDay$steps, col = "chocolate"
+hist(stepsByDay$steps, col = "blue"
      , xlab = "Steps", main = "Total Number of Steps Per Day")
 ```
 
@@ -104,7 +104,7 @@ head(sumdata)
 
 6. Make a histogram of the total number of steps taken each day
 ```{r histogram2, echo=TRUE}
-hist(sumdata$steps, col = "blue"
+hist(sumdata$steps, col = "green"
      , xlab = "Steps"
      , main = "Total Number of Steps Per Day (with the missing data filled in)")
 ```
