@@ -1,4 +1,4 @@
-# Reproducible Research: Peer Assessment 1
+# Reproducible Research: Assessment 1
 
 ## Loading and Preprocessing data
 
@@ -7,9 +7,8 @@
 ```r
 data <- read.csv("activity.csv", header=TRUE)
 ```
-hist
-2. Show original data:
 
+2. Show original data:
 ```r
 head(data)
 ```
