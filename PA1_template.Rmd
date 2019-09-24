@@ -72,7 +72,7 @@ subsetData$interval
 ## Imputing missing values
 Note that there are a number of days/intervals where there are missing values (coded as NA). The presence of missing days may introduce bias into some calculations or summaries of the data.
 
-1. Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NAs)
+1. Calculate&Report total number of missing values in the dataset (i.e. the total number of rows with NAs)
 ```{r missing, echo=TRUE}
 colSums(is.na(data))
 ```
@@ -83,7 +83,7 @@ data$newSteps <- averageSteps$steps
 head(data)
 ```
 
-3. Fill in the missing data
+3. Fill in missing data
 ```{r fill, echo=TRUE}
 data$steps[is.na(data$steps)] <- data$newSteps
 head(data)
