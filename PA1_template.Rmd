@@ -1,6 +1,4 @@
----
-title: 'Reproducible Research: Assessment 1'
----
+# Reproducible Research: Assessment 1
 
 ## Loading and preprocessing the data
 
