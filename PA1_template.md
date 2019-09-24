@@ -1,14 +1,14 @@
 # Reproducible Research: Peer Assessment 1
 
-## Loading and preprocessing the data
+## Loading and Preprocessing data
 
-1. Load the data:
+1. Load data:
 
 ```r
 data <- read.csv("activity.csv", header=TRUE)
 ```
 
-2. Show the original data:
+2. Show original data:
 
 ```r
 head(data)
@@ -53,7 +53,7 @@ hist(stepsByDay$steps, col = "chocolate"
      , xlab = "Steps", main = "Total Number of Steps Per Day")
 ```
 
-![plot of chunk histogram1](./PA1_template_files/figure_html/histogram1.png) 
+![plot of chunk histogram1](./PA1_template_files/figure_markdown/histogram1.png) 
 
 3. Calculate and report the mean and median total number of steps taken per day
 
@@ -100,7 +100,7 @@ with(averageSteps, plot(interval, steps
                 , col = "blue")) 
 ```
 
-![plot of chunk plot1](./PA1_template_files/figure_html/plot1.png) 
+![plot of chunk plot1](./PA1_template_files/figure_markdown/plot1.png) 
 
 3. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -225,7 +225,7 @@ hist(sumdata$steps, col = "blue"
      , main = "Total Number of Steps Per Day (with the missing data filled in)")
 ```
 
-![plot of chunk histogram2](./PA1_template_files/figure_html/histogram2.png) 
+![plot of chunk histogram2](./PA1_template_files/figure_markdown/histogram2.png) 
 
 7. Calculate and report the mean and median total number of steps taken per day
 
@@ -349,4 +349,4 @@ plot(weekendMean$interval, weekendMean$steps
      , main ="Weekend", col ="red", type="l")
 ```
 
-![plot of chunk panel](./PA1_template_files/figure_html/panel.png) 
+![plot of chunk panel](./PA1_template_files/figure_markdown/panel.png) 
